@@ -1,5 +1,5 @@
 // Service Worker with PWA offline support and Firebase Cloud Messaging
-const CACHE_NAME = "safzan-data-v1";
+const CACHE_NAME = "arkam-data-v1";
 const STATIC_ASSETS = ["/", "/manifest.json", "/images/logo.svg"];
 
 // Immediately activate this service worker when installed

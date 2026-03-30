@@ -67,12 +67,12 @@ export function ApiKeyCreateModal({
   const handleDownload = () => {
     if (!generatedKey) return;
 
-    const content = `Safzan Data API Key\n\n${generatedKey}\n\nCreated: ${new Date().toISOString()}\n`;
+    const content = `Arkam Data API Key\n\n${generatedKey}\n\nCreated: ${new Date().toISOString()}\n`;
     const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = `safzan-api-key-${Date.now()}.txt`;
+    link.download = `arkam-api-key-${Date.now()}.txt`;
     link.click();
     URL.revokeObjectURL(url);
     setHasSavedSecret(true);

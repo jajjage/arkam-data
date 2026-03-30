@@ -155,7 +155,7 @@ export function WebhookConfigCard() {
             <Label htmlFor="callbackUrl">Callback URL</Label>
             <Input
               id="callbackUrl"
-              placeholder="https://example.com/webhooks/safzan"
+              placeholder="https://example.com/webhooks/arkam"
               value={effectiveCallbackUrl}
               onChange={(event) => {
                 setHasEditedCallbackUrl(true);
@@ -233,7 +233,7 @@ export function WebhookConfigCard() {
         title="Webhook Secret"
         description="Store this callback secret securely."
         secret={latestSecret}
-        filePrefix="safzan-webhook-secret"
+        filePrefix="arkam-webhook-secret"
       />
     </>
   );

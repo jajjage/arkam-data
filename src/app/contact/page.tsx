@@ -19,8 +19,8 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Safzan Data Sub",
-  description: "Get in touch with Safzan Data Sub for support, inquiries, and assistance.",
+  title: "Contact Us | Arkam Data",
+  description: "Get in touch with Arkam Data for support, inquiries, and assistance.",
 };
 
 export default function ContactPage() {

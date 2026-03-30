@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Privacy Policy - Safzan Data",
-  description: "Privacy Policy for Safzan Mobile Application",
+  title: "Privacy Policy - Arkam Data",
+  description: "Privacy Policy for Arkam Data Mobile Application",
 };
 
 export default function PrivacyPolicyPage() {
@@ -17,7 +17,7 @@ export default function PrivacyPolicyPage() {
 
           <div className="prose prose-blue max-w-none space-y-6 text-gray-700">
             <p>
-              This Privacy Policy describes how Safzan Mobile (&quot;we,&quot;
+              This Privacy Policy describes how Arkam Data Mobile (&quot;we,&quot;
               &quot;us,&quot; or &quot;our&quot;) collects, uses, and discloses
               your information when you use our mobile application (the
               &quot;App&quot;).

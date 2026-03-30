@@ -129,7 +129,7 @@ export const adminOfferService = {
       // If data is { offer: Offer }, then T should be { offer: Offer }.
       // But my Offer type is the object itself.
       // I should stick to mappings. If the API returns wrapped `offer`, I need to extract it or update types.
-      // Assuming standard Safzan pattern: data is the payload.
+      // Assuming standard Arkam pattern: data is the payload.
       // If the payload is { offer: ... }, I should map `response.data.data.offer` if exists, or `response.data.data` if it IS the offer.
       // Based on user doc: "Return Type: { offer: ... }" (Lines 1-23 of GET /:id return type block).
       // It implies `data` field of generic response contains field `offer`.

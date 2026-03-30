@@ -97,7 +97,7 @@ export function ShareTransactionDialog({
     const provider =
       tx.related?.operatorCode || tx.related?.operator?.name || "-";
 
-    return `Safzan Receipt\nTransaction ID: ${tx.id}\nAmount: ${amount}\nStatus: ${status}\nProvider: ${provider}\nRecipient: ${recipient}\nDate: ${date}`;
+    return `Arkam Receipt\nTransaction ID: ${tx.id}\nAmount: ${amount}\nStatus: ${status}\nProvider: ${provider}\nRecipient: ${recipient}\nDate: ${date}`;
   };
 
   // Wait for images inside an element to load (useful when cloning an element that wasn't rendered)
@@ -189,7 +189,7 @@ export function ShareTransactionDialog({
 
         const file = new File(
           [blob],
-          `safzan-receipt-${transaction.id.slice(0, 8)}.png`,
+          `arkam-receipt-${transaction.id.slice(0, 8)}.png`,
           { type: "image/png" }
         );
 
@@ -199,7 +199,7 @@ export function ShareTransactionDialog({
         if (navigator.canShare && navigator.canShare({ files: [file] })) {
           await navigator.share({
             files: [file],
-            title: "Safzan Transaction Receipt",
+            title: "Arkam Transaction Receipt",
             text: shareText,
           });
           onClose();
@@ -291,7 +291,7 @@ export function ShareTransactionDialog({
         const pdfBlob = pdf.output("blob");
         const file = new File(
           [pdfBlob],
-          `safzan-receipt-${transaction.id.slice(0, 8)}.pdf`,
+          `arkam-receipt-${transaction.id.slice(0, 8)}.pdf`,
           { type: "application/pdf" }
         );
 
@@ -300,7 +300,7 @@ export function ShareTransactionDialog({
         if (navigator.canShare && navigator.canShare({ files: [file] })) {
           await navigator.share({
             files: [file],
-            title: "Safzan Transaction Receipt",
+            title: "Arkam Transaction Receipt",
             text: shareText,
           });
           onClose();

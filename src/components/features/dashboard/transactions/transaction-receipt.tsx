@@ -426,7 +426,7 @@ export const TransactionReceipt = React.forwardRef<
       {/* Branding Footer */}
       <div className="bg-slate-50 p-4 text-center">
         <div className="flex items-center justify-center gap-2 text-xs font-medium text-slate-400">
-          <span>safzan-data.com</span>
+          <span>arkam-data.com</span>
         </div>
       </div>
     </Card>

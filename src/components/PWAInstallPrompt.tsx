@@ -167,7 +167,7 @@ export function PWAInstallPrompt() {
         <div className="flex items-start justify-between gap-3">
           <div className="flex-1">
             <h3 className="mb-2 text-sm font-semibold text-blue-900 dark:text-blue-100">
-              Install Safzan Data
+              Install Arkam Data
             </h3>
             <ol className="space-y-2 text-xs text-blue-800 dark:text-blue-200">
               <li className="flex items-center gap-2">
@@ -218,7 +218,7 @@ export function PWAInstallPrompt() {
         <div className="flex-1">
           <h3 className="mb-1 text-sm font-semibold">Install App</h3>
           <p className="text-muted-foreground text-xs">
-            Install Safzan Data on your home screen for quick access
+            Install Arkam Data on your home screen for quick access
           </p>
         </div>
         <button

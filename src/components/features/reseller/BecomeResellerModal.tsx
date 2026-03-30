@@ -113,7 +113,7 @@ export function BecomeResellerModal({
                 Unlock Exclusive Wholesale Rates
               </DialogTitle>
               <DialogDescription>
-                Turn your network into net worth. Join the Safzan Data Reseller
+                Turn your network into net worth. Join the Arkam Data Reseller
                 program today!
               </DialogDescription>
             </DialogHeader>

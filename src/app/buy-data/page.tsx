@@ -4,7 +4,7 @@ import { ArrowRight, Wifi } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Buy Data | Safzan",
+  title: "Buy Data | Arkam",
   description:
     "Purchase affordable data bundles for all Nigerian networks. MTN, Airtel, Glo, 9mobile data plans at the best rates.",
 };
@@ -39,7 +39,7 @@ export default function BuyDataPage() {
       <section className="bg-muted/30 border-t px-4 py-12">
         <div className="container mx-auto max-w-6xl">
           <h2 className="mb-8 text-center text-2xl font-semibold">
-            Why Choose Safzan?
+            Why Choose Arkam?
           </h2>
           <div className="grid gap-6 md:grid-cols-3">
             <div className="bg-background rounded-xl p-6 text-center shadow-sm">

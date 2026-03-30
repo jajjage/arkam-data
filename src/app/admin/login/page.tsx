@@ -17,7 +17,7 @@ export default function AdminLoginPage() {
       {/* Header */}
       <header className="bg-card flex items-center gap-2 border-b px-6 py-4">
         <ShieldCheck className="text-primary h-6 w-6" />
-        <span className="text-lg font-semibold">Safzan Admin</span>
+        <span className="text-lg font-semibold">Arkam Admin</span>
       </header>
 
       {/* Main Content */}
@@ -35,7 +35,7 @@ export default function AdminLoginPage() {
 
       {/* Footer */}
       <footer className="bg-card text-muted-foreground border-t px-6 py-4 text-center text-sm">
-        &copy; {new Date().getFullYear()} Safzan Data. Admin Portal.
+        &copy; {new Date().getFullYear()} Arkam Data. Admin Portal.
       </footer>
     </div>
   );

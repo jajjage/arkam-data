@@ -21,7 +21,7 @@ export function Footer() {
       <div className="container mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-4">
           <div className="md:col-span-1">
-            <h3 className="text-lg font-bold">Safzan Data Sub</h3>
+            <h3 className="text-lg font-bold">Arkam Data</h3>
             <p className="mt-2 text-sm leading-relaxed">
               Your one-stop shop for data, airtime, and bill payments in
               Nigeria.
@@ -79,7 +79,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t pt-8 text-center text-sm">
-          <p>© 2025 Safzan Data Sub. All Rights Reserved.</p>
+          <p>© 2025 Arkam Data. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

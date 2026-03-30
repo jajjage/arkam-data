@@ -1,4 +1,4 @@
-const CACHE_NAME = "safzan-data-cache-v3";
+const CACHE_NAME = "arkam-data-cache-v3";
 
 // Pages and assets to pre-cache for instant PWA startup
 const PRECACHE_URLS = [

@@ -148,7 +148,7 @@ export function PwaSplashScreen({ children }: { children: React.ReactNode }) {
                   ? "/images/splash-icon-dark.png"
                   : "/images/splash-icon-light.png"
               }
-              alt="Safzan Data"
+              alt="Arkam Data"
               width={100}
               height={100}
               priority

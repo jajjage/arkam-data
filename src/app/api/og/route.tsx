@@ -34,7 +34,7 @@ export async function GET() {
               backdropFilter: "blur(10px)",
             }}
           >
-            {/* SDS Text Logo */}
+            {/* AD Text Logo */}
             <div
               style={{
                 fontSize: "80px",
@@ -44,7 +44,7 @@ export async function GET() {
                 position: "relative",
               }}
             >
-              SDS
+              AD
             </div>
           </div>
 
@@ -59,7 +59,7 @@ export async function GET() {
               lineHeight: "1.2",
             }}
           >
-            SAFZAN
+            ARKAM
           </div>
 
           {/* Subtitle */}
@@ -72,7 +72,7 @@ export async function GET() {
               marginBottom: "20px",
             }}
           >
-            DATA SUB
+            DATA
           </div>
 
           {/* Tagline */}

@@ -12,14 +12,18 @@ import { ThemeProvider } from "@/providers/theme-provider";
 import type { Metadata } from "next";
 import { Toaster } from "sonner";
 import "../styles/globals.css";
+import { Geist } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
   title: {
-    default: "Safzan Data Sub - Premium Data & Airtime Services",
-    template: "%s | Safzan Data Sub",
+    default: "Arkam Data - Premium Data & Airtime Services",
+    template: "%s | Arkam Data",
   },
   description:
-    "Buy cheap data bundles, airtime, and pay bills instantly with Safzan Data Sub. Premium data and airtime services with instant delivery and best prices.",
+    "Buy cheap data bundles, airtime, and pay bills instantly with Arkam Data. Premium data and airtime services with instant delivery and best prices.",
   keywords: [
     "cheap data",
     "buy airtime",
@@ -31,11 +35,11 @@ export const metadata: Metadata = {
     "cheap airtime nigeria",
     "data reseller",
     "bill payment",
-    "safzan data",
+    "arkam data",
   ],
-  authors: [{ name: "Safzan Data Sub" }],
-  creator: "Safzan Data Sub",
-  publisher: "Safzan Data Sub",
+  authors: [{ name: "Arkam Data" }],
+  creator: "Arkam Data",
+  publisher: "Arkam Data",
   metadataBase: new URL("https://safzandatasub.com"),
   alternates: {
     canonical: "/",
@@ -44,8 +48,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_NG",
     url: "https://safzandatasub.com",
-    siteName: "Safzan Data Sub",
-    title: "Safzan Data Sub - Premium Data & Airtime Services",
+    siteName: "Arkam Data",
+    title: "Arkam Data - Premium Data & Airtime Services",
     description:
       "Buy cheap data bundles, airtime, and pay bills instantly. Premium data and airtime services.",
     images: [
@@ -53,13 +57,13 @@ export const metadata: Metadata = {
         url: "/api/og",
         width: 1200,
         height: 630,
-        alt: "Safzan Data Sub - Premium Data & Airtime Services",
+        alt: "Arkam Data - Premium Data & Airtime Services",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Safzan Data Sub - Premium Data & Airtime Services",
+    title: "Arkam Data - Premium Data & Airtime Services",
     description: "Buy cheap data bundles, airtime, and pay bills instantly.",
     images: ["/api/og"],
   },
@@ -78,7 +82,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "Safzan Data Sub",
+    title: "Arkam Data",
   },
   formatDetection: {
     telephone: false,
@@ -91,7 +95,7 @@ export const metadata: Metadata = {
     "mobile-web-app-capable": "yes",
     "apple-mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "default",
-    "apple-mobile-web-app-title": "Safzan Data Sub",
+    "apple-mobile-web-app-title": "Arkam Data",
     "theme-color": "#ffffff",
   },
 };
@@ -102,7 +106,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={cn("font-sans", geist.variable)}>
       <head>
         <meta
           name="viewport"
@@ -122,7 +126,7 @@ export default function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="Safzan Data" />
+        <meta name="apple-mobile-web-app-title" content="Arkam Data" />
       </head>
       <body className="antialiased">
         <ThemeProvider
