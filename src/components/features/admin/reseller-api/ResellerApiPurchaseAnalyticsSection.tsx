@@ -36,6 +36,16 @@ const formatCurrency = (value: number) =>
     maximumFractionDigits: 2,
   }).format(value);
 
+const getTooltipNumber = (
+  value: number | string | ReadonlyArray<number | string> | undefined
+) => {
+  const rawValue = Array.isArray(value) ? value[0] : value;
+  const parsedValue =
+    typeof rawValue === "number" ? rawValue : Number(rawValue ?? 0);
+
+  return Number.isFinite(parsedValue) ? parsedValue : 0;
+};
+
 export function ResellerApiPurchaseAnalyticsSection() {
   const [fromDateInput, setFromDateInput] = useState("");
   const [toDateInput, setToDateInput] = useState("");
@@ -284,7 +294,9 @@ export function ResellerApiPurchaseAnalyticsSection() {
                       ))}
                     </Pie>
                     <Tooltip
-                      formatter={(value: number) => value.toLocaleString()}
+                      formatter={(value) =>
+                        getTooltipNumber(value).toLocaleString()
+                      }
                     />
                   </PieChart>
                 </ResponsiveContainer>
@@ -306,7 +318,9 @@ export function ResellerApiPurchaseAnalyticsSection() {
                       ))}
                     </Bar>
                     <Tooltip
-                      formatter={(value: number) => formatCurrency(value)}
+                      formatter={(value) =>
+                        formatCurrency(getTooltipNumber(value))
+                      }
                       labelFormatter={(label) => `Status: ${label}`}
                     />
                   </BarChart>

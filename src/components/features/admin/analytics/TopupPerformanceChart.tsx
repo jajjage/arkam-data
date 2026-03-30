@@ -60,6 +60,16 @@ export function TopupPerformanceChart({
       maximumFractionDigits: 0,
     }).format(value);
 
+  const formatTooltipCount = (
+    value: number | string | ReadonlyArray<number | string> | undefined
+  ) => {
+    if (Array.isArray(value)) {
+      return value.join(", ");
+    }
+
+    return (value ?? 0).toLocaleString();
+  };
+
   return (
     <Card className="h-full">
       <CardHeader>
@@ -115,7 +125,7 @@ export function TopupPerformanceChart({
                 ))}
               </Pie>
               <Tooltip
-                formatter={(value: number) => [value.toLocaleString(), "Count"]}
+                formatter={(value) => [formatTooltipCount(value), "Count"]}
               />
               <Legend />
             </PieChart>

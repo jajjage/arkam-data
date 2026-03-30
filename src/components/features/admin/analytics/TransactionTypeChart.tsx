@@ -24,6 +24,16 @@ interface TransactionTypeChartProps {
 export function TransactionTypeChart({ dateRange }: TransactionTypeChartProps) {
   const { data, isLoading, error } = useTransactionsByType(dateRange);
 
+  const formatTooltipCount = (
+    value: number | string | ReadonlyArray<number | string> | undefined
+  ) => {
+    if (Array.isArray(value)) {
+      return value.join(", ");
+    }
+
+    return (value ?? 0).toLocaleString();
+  };
+
   if (error) {
     return (
       <Card>
@@ -75,10 +85,7 @@ export function TransactionTypeChart({ dateRange }: TransactionTypeChartProps) {
                   tick={{ fontSize: 12 }}
                 />
                 <Tooltip
-                  formatter={(value: number) => [
-                    value.toLocaleString(),
-                    "Count",
-                  ]}
+                  formatter={(value) => [formatTooltipCount(value), "Count"]}
                   contentStyle={{
                     backgroundColor: "hsl(var(--card))",
                     border: "1px solid hsl(var(--border))",
