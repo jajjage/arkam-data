@@ -54,7 +54,7 @@ jobs:
     name: Build and Push Docker Image
     runs-on: ubuntu-latest
     needs: test
-    environment: safzan  # Use safzan environment variables
+    environment: arkam  # Use Arkam environment variables
 
     permissions:
       contents: read
@@ -88,7 +88,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.REGISTRY }}/${{ secrets.DOCKERHUB_USERNAME }}/safzan-frontend
+          images: ${{ env.REGISTRY }}/${{ secrets.DOCKERHUB_USERNAME }}/arkam-frontend
           tags: |
             type=sha,prefix=
             type=raw,value=latest,enable={{is_default_branch}}
