@@ -97,9 +97,10 @@ export function TopupPerformanceChart({
                 paddingAngle={2}
                 dataKey="value"
                 nameKey="name"
-                label={({ name, percent }) =>
-                  `${name} ${(percent * 100).toFixed(0)}%`
-                }
+                label={({ name, percent }) => {
+                  const share = typeof percent === "number" ? percent * 100 : 0;
+                  return `${name} ${share.toFixed(0)}%`;
+                }}
                 labelLine={false}
               >
                 {chartData.map((entry, index) => (

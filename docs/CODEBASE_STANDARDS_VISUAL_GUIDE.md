@@ -194,7 +194,7 @@
 ## Folder Structure Hierarchy
 
 ```
-safzan-data-frontend/
+arkam-data-frontend/
 │
 ├── 📁 docs/
 │   ├── CODEBASE_STANDARDS.md              ← Master blueprint

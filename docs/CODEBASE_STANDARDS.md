@@ -21,7 +21,7 @@ This document establishes the **standard pattern** for developing features and o
 ### Root Organization
 
 ```
-safzan-data-frontend/
+arkam-data-frontend/
 ├── src/
 │   ├── components/
 │   │   └── features/
