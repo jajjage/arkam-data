@@ -35,7 +35,7 @@ export function Header() {
         <div className="flex shrink-0 items-center">
           <Link href="/" className="flex items-center space-x-2">
             <Image
-              src="/images/logo.svg"
+              src="/images/logo.png"
               alt="Arkam Data"
               width={40}
               height={40}
@@ -100,7 +100,7 @@ export function Header() {
                     onClick={() => setIsOpen(false)}
                   >
                     <Image
-                      src="/images/logo.svg"
+                      src="/images/logo.png"
                       alt="Arkam Data"
                       width={32}
                       height={32}
