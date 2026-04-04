@@ -4,6 +4,18 @@ export const runtime = "nodejs";
 
 export async function GET() {
   try {
+    // Fetch the logo image as a buffer from the public folder
+    const logoUrl = new URL(
+      "/images/logo.png",
+      process.env.VERCEL_URL
+        ? `https://${process.env.VERCEL_URL}`
+        : "https://safzandatasub.com"
+    );
+
+    const logoData = await fetch(logoUrl.href)
+      .then((res) => res.arrayBuffer())
+      .catch(() => null);
+
     return new ImageResponse(
       (
         <div
@@ -21,11 +33,11 @@ export async function GET() {
             fontFamily: "system-ui, -apple-system, sans-serif",
           }}
         >
-          {/* Logo/Shield Container */}
+          {/* Logo Container */}
           <div
             style={{
-              width: "200px",
-              height: "200px",
+              width: "240px",
+              height: "240px",
               background: "rgba(255, 255, 255, 0.1)",
               borderRadius: "20px",
               display: "flex",
@@ -34,18 +46,30 @@ export async function GET() {
               backdropFilter: "blur(10px)",
             }}
           >
-            {/* AD Text Logo */}
-            <div
-              style={{
-                fontSize: "80px",
-                fontWeight: "bold",
-                color: "white",
-                letterSpacing: "8px",
-                position: "relative",
-              }}
-            >
-              AD
-            </div>
+            {/* Actual Arkam Logo */}
+            {logoData && (
+              <img
+                src={`data:image/png;base64,${Buffer.from(logoData).toString("base64")}`}
+                alt="Arkam Data Logo"
+                style={{
+                  width: "200px",
+                  height: "200px",
+                  objectFit: "contain",
+                }}
+              />
+            )}
+            {!logoData && (
+              <div
+                style={{
+                  fontSize: "80px",
+                  fontWeight: "bold",
+                  color: "white",
+                  letterSpacing: "8px",
+                }}
+              >
+                AR
+              </div>
+            )}
           </div>
 
           {/* Main Title */}
@@ -59,30 +83,17 @@ export async function GET() {
               lineHeight: "1.2",
             }}
           >
-            ARKAM
-          </div>
-
-          {/* Subtitle */}
-          <div
-            style={{
-              fontSize: "38px",
-              color: "rgba(255, 255, 255, 0.9)",
-              textAlign: "center",
-              fontWeight: "600",
-              marginBottom: "20px",
-            }}
-          >
-            DATA
+            ARKAM DATA
           </div>
 
           {/* Tagline */}
           <div
             style={{
-              fontSize: "24px",
-              color: "rgba(255, 255, 255, 0.8)",
+              fontSize: "28px",
+              color: "rgba(255, 255, 255, 0.9)",
               textAlign: "center",
+              fontWeight: "500",
               maxWidth: "900px",
-              marginTop: "10px",
             }}
           >
             Premium Data & Airtime Services
