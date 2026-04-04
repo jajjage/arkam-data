@@ -1,20 +1,20 @@
+import { readFile } from "fs/promises";
 import { ImageResponse } from "next/og";
+import { join } from "path";
 
 export const runtime = "nodejs";
 
 export async function GET() {
   try {
-    // Fetch the logo image as a buffer from the public folder
-    const logoUrl = new URL(
-      "/images/logo.png",
-      process.env.VERCEL_URL
-        ? `https://${process.env.VERCEL_URL}`
-        : "https://safzandatasub.com"
-    );
-
-    const logoData = await fetch(logoUrl.href)
-      .then((res) => res.arrayBuffer())
-      .catch(() => null);
+    // Read the logo file directly from the public folder
+    let logoBase64 = null;
+    try {
+      const logoPath = join(process.cwd(), "public", "images", "logo.png");
+      const logoBuffer = await readFile(logoPath);
+      logoBase64 = Buffer.from(logoBuffer).toString("base64");
+    } catch (err) {
+      console.error("Failed to read logo file:", err);
+    }
 
     return new ImageResponse(
       (
@@ -47,9 +47,9 @@ export async function GET() {
             }}
           >
             {/* Actual Arkam Logo */}
-            {logoData && (
+            {logoBase64 && (
               <img
-                src={`data:image/png;base64,${Buffer.from(logoData).toString("base64")}`}
+                src={`data:image/png;base64,${logoBase64}`}
                 alt="Arkam Data Logo"
                 style={{
                   width: "200px",
@@ -58,7 +58,7 @@ export async function GET() {
                 }}
               />
             )}
-            {!logoData && (
+            {!logoBase64 && (
               <div
                 style={{
                   fontSize: "80px",
