@@ -1,21 +1,9 @@
-import { readFile } from "fs/promises";
 import { ImageResponse } from "next/og";
-import { join } from "path";
 
 export const runtime = "nodejs";
 
 export async function GET() {
   try {
-    // Read the logo file directly from the public folder
-    let logoBase64 = null;
-    try {
-      const logoPath = join(process.cwd(), "public", "images", "logo.png");
-      const logoBuffer = await readFile(logoPath);
-      logoBase64 = Buffer.from(logoBuffer).toString("base64");
-    } catch (err) {
-      console.error("Failed to read logo file:", err);
-    }
-
     return new ImageResponse(
       (
         <div
@@ -33,44 +21,58 @@ export async function GET() {
             fontFamily: "system-ui, -apple-system, sans-serif",
           }}
         >
-          {/* Logo Container */}
-          <div
+          {/* Arkam Logo SVG Container */}
+          <svg
+            width="240"
+            height="240"
+            viewBox="0 0 240 240"
             style={{
-              width: "240px",
-              height: "240px",
-              background: "rgba(255, 255, 255, 0.1)",
-              borderRadius: "20px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              backdropFilter: "blur(10px)",
             }}
           >
-            {/* Actual Arkam Logo */}
-            {logoBase64 && (
-              <img
-                src={`data:image/png;base64,${logoBase64}`}
-                alt="Arkam Data Logo"
-                style={{
-                  width: "200px",
-                  height: "200px",
-                  objectFit: "contain",
-                }}
+            {/* Background Container */}
+            <rect
+              x="10"
+              y="10"
+              width="220"
+              height="220"
+              rx="15"
+              fill="rgba(255, 255, 255, 0.1)"
+            />
+
+            {/* Gold Circle (bottom left) */}
+            <circle cx="45" cy="160" r="18" fill="#c9a961" />
+
+            {/* Navy "A" - Triangle */}
+            <polygon points="70,50 95,130 60,130" fill="#001e42" />
+
+            {/* Navy "R" - Text design */}
+            <g fill="#001e42">
+              {/* Main vertical stroke of R */}
+              <rect x="100" y="50" width="20" height="90" rx="4" />
+
+              {/* Top curve of R */}
+              <path
+                d="M 120 50 Q 150 50 150 75 Q 150 95 130 100"
+                strokeWidth="18"
+                stroke="#001e42"
+                fill="none"
               />
-            )}
-            {!logoBase64 && (
-              <div
-                style={{
-                  fontSize: "80px",
-                  fontWeight: "bold",
-                  color: "white",
-                  letterSpacing: "8px",
-                }}
-              >
-                AR
-              </div>
-            )}
-          </div>
+
+              {/* Diagonal leg of R */}
+              <line
+                x1="125"
+                y1="95"
+                x2="155"
+                y2="140"
+                strokeWidth="18"
+                stroke="#001e42"
+                strokeLinecap="round"
+              />
+            </g>
+          </svg>
 
           {/* Main Title */}
           <div
