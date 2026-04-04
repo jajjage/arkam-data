@@ -1,9 +1,16 @@
+import { readFileSync } from "fs";
 import { ImageResponse } from "next/og";
+import { join } from "path";
 
 export const runtime = "nodejs";
 
 export async function GET() {
   try {
+    // Read the logo image file
+    const logoPath = join(process.cwd(), "public", "images", "logo.png");
+    const logoData = readFileSync(logoPath);
+    const logoBase64 = `data:image/png;base64,${logoData.toString("base64")}`;
+
     return new ImageResponse(
       (
         <div
@@ -21,58 +28,26 @@ export async function GET() {
             fontFamily: "system-ui, -apple-system, sans-serif",
           }}
         >
-          {/* Arkam Logo SVG Container */}
-          <svg
-            width="240"
-            height="240"
-            viewBox="0 0 240 240"
+          {/* Logo Image Container */}
+          <div
             style={{
+              width: "280px",
+              height: "240px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
             }}
           >
-            {/* Background Container */}
-            <rect
-              x="10"
-              y="10"
-              width="220"
-              height="220"
-              rx="15"
-              fill="rgba(255, 255, 255, 0.1)"
+            <img
+              src={logoBase64}
+              alt="Arkam Data Logo"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "contain",
+              }}
             />
-
-            {/* Gold Circle (bottom left) */}
-            <circle cx="45" cy="160" r="18" fill="#c9a961" />
-
-            {/* Navy "A" - Triangle */}
-            <polygon points="70,50 95,130 60,130" fill="#001e42" />
-
-            {/* Navy "R" - Text design */}
-            <g fill="#001e42">
-              {/* Main vertical stroke of R */}
-              <rect x="100" y="50" width="20" height="90" rx="4" />
-
-              {/* Top curve of R */}
-              <path
-                d="M 120 50 Q 150 50 150 75 Q 150 95 130 100"
-                strokeWidth="18"
-                stroke="#001e42"
-                fill="none"
-              />
-
-              {/* Diagonal leg of R */}
-              <line
-                x1="125"
-                y1="95"
-                x2="155"
-                y2="140"
-                strokeWidth="18"
-                stroke="#001e42"
-                strokeLinecap="round"
-              />
-            </g>
-          </svg>
+          </div>
 
           {/* Main Title */}
           <div

@@ -2,8 +2,8 @@ import { MarkupSyncer } from "@/components/MarkupSyncer";
 import { PWAInstallPrompt } from "@/components/PWAInstallPrompt";
 import { ServiceWorkerNavigationListener } from "@/components/ServiceWorkerNavigationListener";
 import { NetworkStatusBanner } from "@/components/layout/network-status-banner";
-import { SoftLockScreen } from "@/components/pwa/SoftLockScreen";
 import { WhatsAppWidget } from "@/components/layout/whatsapp-widget";
+import { SoftLockScreen } from "@/components/pwa/SoftLockScreen";
 // import { HealthMonitor } from "@/components/HealthMonitor";
 import { AuthProvider } from "@/context/AuthContext";
 import { SoftLockProvider } from "@/context/SoftLockContext";
@@ -36,14 +36,14 @@ export const metadata: Metadata = {
   authors: [{ name: "Arkam Data" }],
   creator: "Arkam Data",
   publisher: "Arkam Data",
-  metadataBase: new URL("https://safzandatasub.com"),
+  metadataBase: new URL("https://arkamdatasub.com"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "en_NG",
-    url: "https://safzandatasub.com",
+    url: "https://arkamdatasub.com",
     siteName: "Arkam Data",
     title: "Arkam Data - Premium Data & Airtime Services",
     description:
