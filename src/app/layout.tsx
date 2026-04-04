@@ -50,7 +50,7 @@ export const metadata: Metadata = {
       "Buy cheap data bundles, airtime, and pay bills instantly. Premium data and airtime services.",
     images: [
       {
-        url: "/api/og",
+        url: "/api/og?v=2",
         width: 1200,
         height: 630,
         alt: "Arkam Data - Premium Data & Airtime Services",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Arkam Data - Premium Data & Airtime Services",
     description: "Buy cheap data bundles, airtime, and pay bills instantly.",
-    images: ["/api/og"],
+    images: ["/api/og?v=2"],
   },
   robots: {
     index: true,
